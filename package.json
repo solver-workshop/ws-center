@@ -1,0 +1,42 @@
+{
+  "name": "ws-server",
+  "version": "0.0.1",
+  "description": "The Websocket Server",
+  "main": "./lib/app.js",
+  "scripts": {
+    "start": "node lib/app.js",
+    "dev": "nodemon lib/app.js",
+    "test": "npm run lint && NODE_ENV=test mocha -t 100000 --exit ./test/index.test.js",
+    "test-ci": "npm run lint && NODE_ENV=test-ci mocha -t 100000 --exit ./test/index.test.js",
+    "cover": "NODE_ENV=test nyc npm test",
+    "lint": "./node_modules/.bin/standard",
+    "doc": "node ./scripts/swagger.js && spectacle public/swagger.json -t public"
+  },
+  "author": "DavidCai",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.0.1",
+    "http-errors": "^1.7.1",
+    "ilog": "^1.2.3",
+    "ioredis": "^4.3.0",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.0",
+    "shimo-socket.io-redis": "^5.2.1",
+    "socket.io": "^2.2.0",
+    "toml": "^2.3.3",
+    "validator": "^10.10.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "glob": "^7.1.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
+    "power-assert": "^1.6.1",
+    "standard": "^12.0.1",
+    "supertest": "^3.3.0"
+  }
+}
