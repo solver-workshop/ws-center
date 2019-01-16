@@ -1,6 +1,6 @@
 [app]
 port = 9001
-name = 'ws-server'
+name = 'ws-center'
 host = 'http://127.0.0.1:9001'
 
 [redis]

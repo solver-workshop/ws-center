@@ -1,5 +1,5 @@
 {
-  "name": "ws-server",
+  "name": "ws-center",
   "version": "0.1.0",
   "description": "A distributed WebSocket Server with high level abstractions and HTTP APIs",
   "main": "./lib/app.js",
