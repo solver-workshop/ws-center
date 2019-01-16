@@ -24,6 +24,14 @@ describe('api - room', function () {
         path: '/ws'
       })
 
+      client.on('message', function () {
+        ilog.info({
+          class: 'client-message',
+          clientId: id,
+          message: arguments
+        })
+      })
+
       client.on('connect', function () {
         ilog.debug({
           class: 'client-connect',
