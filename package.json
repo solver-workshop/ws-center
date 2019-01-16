@@ -1,6 +1,6 @@
 {
   "name": "ws-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The Websocket Server",
   "main": "./lib/app.js",
   "scripts": {

@@ -3,15 +3,11 @@ port = 9001
 name = 'ws-server'
 host = 'http://127.0.0.1:9001'
 
-[mongo]
-host = 'mongodb://127.0.0.1:27017'
-db = 'ws-server'
-password = ''
-
 [redis]
 host = '127.0.0.1'
 port = 6379
 password = ''
+prefix = 'socket'
 
 [socketIO]
 pingTimeout = 40000

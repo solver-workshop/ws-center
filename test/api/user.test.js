@@ -76,10 +76,26 @@ describe('api - user', function () {
     it('Push to online users', async function () {
       let { body } = await request
         .post(`/users/push`)
-        .send({ a: 'aa', b: 'bb', userIds: [userId, userId3] })
+        .send({ a: 'aa', b: 'bb', userIds: [userId, userId3, Math.random().toString(36).substring(7)] })
         .expect(200)
 
       assert.strictEqual(body.count, 2)
+    })
+
+    it('Push to offline users', async function () {
+      let { body } = await request
+        .post(`/users/push`)
+        .send({
+          a: 'aa',
+          b: 'bb',
+          userIds: [
+            Math.random().toString(36).substring(7),
+            Math.random().toString(36).substring(7)
+          ]
+        })
+        .expect(200)
+
+      assert.strictEqual(body.count, 0)
     })
   })
 })

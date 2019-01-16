@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/solver-workshop/ws-server.svg?branch=master)](https://travis-ci.org/solver-workshop/ws-server)
 
-The WebSocket Server.
+A WebSocket Server with high level abstractions and HTTP APIs.
