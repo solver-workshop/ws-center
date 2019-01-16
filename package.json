@@ -1,7 +1,7 @@
 {
   "name": "ws-server",
   "version": "0.1.0",
-  "description": "The Websocket Server",
+  "description": "A distributed WebSocket Server with high level abstractions and HTTP APIs",
   "main": "./lib/app.js",
   "scripts": {
     "start": "node lib/app.js",
