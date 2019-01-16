@@ -1,8 +1,9 @@
 /* global describe it before */
 'use strict'
-const request = require('supertest')(require('../../lib/app'))
+const assert = require('power-assert')
 const SocketClient = require('socket.io-client')
 const ilog = require('ilog')
+const request = require('supertest')(require('../../lib/app'))
 
 describe('api - room', function () {
   let userId, userId2, userId3, roomName
@@ -54,6 +55,26 @@ describe('api - room', function () {
           userIds: `${userId},${userId2}`
         })
         .expect(204)
+    })
+  })
+
+  describe('push', function () {
+    it('Push to a room with 1 user', async function () {
+      let { body } = await request
+        .post(`/rooms/${roomName}/push`)
+        .send({ a: 'aa', b: 'bb' })
+        .expect(200)
+
+      assert.strictEqual(body.count, 1)
+    })
+
+    it('Push to an empty room', async function () {
+      let { body } = await request
+        .post(`/rooms/${Math.random().toString(36).substring(7)}/push`)
+        .send({ a: 'aa', b: 'bb' })
+        .expect(200)
+
+      assert.strictEqual(body.count, 0)
     })
   })
 })

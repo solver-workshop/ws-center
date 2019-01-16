@@ -1,9 +1,9 @@
 /* global describe it before */
 'use strict'
-const request = require('supertest')(require('../../lib/app'))
 const assert = require('power-assert')
 const SocketClient = require('socket.io-client')
 const ilog = require('ilog')
+const request = require('supertest')(require('../../lib/app'))
 
 describe('api - user', function () {
   let userId, userId2, userId3
