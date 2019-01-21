@@ -1,6 +1,6 @@
 # ws-center
 
-[![Build Status](https://travis-ci.org/solver-workshop/ws-server.svg?branch=master)](https://travis-ci.org/solver-workshop/ws-server)
+[![Build Status](https://travis-ci.org/solver-workshop/ws-center.svg?branch=master)](https://travis-ci.org/solver-workshop/ws-center)
 
 A distributed WebSocket server with high level abstractions and HTTP APIs, based on [socket.io](https://socket.io) and its [redis adapter](https://github.com/socketio/socket.io-redis).
 
